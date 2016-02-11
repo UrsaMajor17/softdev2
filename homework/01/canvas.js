@@ -1,7 +1,7 @@
 /*
 Yasmeen Roumie
 SoftDev2 pd 3
-HW 2 -- Finding Your Path Around the Canvas
+HW01a -- Finding Your Path Around the Canvas
 2016-02-11
 */
 var c = document.getElementById("ftb2maga");
