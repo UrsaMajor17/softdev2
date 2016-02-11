@@ -10,7 +10,7 @@
   * .beginPath();
   * .moveTo(a, b);
   * .lineTo(a, b);
-  * .closepath();
+  * .closePath();
   * .stroke();
   * .fill();
   * .arc(a, b, c, d, e);
