@@ -1,30 +1,54 @@
 /*
 Yasmeen Roumie
 SoftDev2 pd 3
-HW02 -- Connect the Dots
+HW02b -- Dot, Dot, Dot
 2016-02-12
 */
-var canvas = document.getElementById("playground");
-var clear = document.getElementById("clear");
-var ctx = canvas.getContext("2d");
+var canvas = document.getElementById("playground"); // Canvas
+var button = document.getElementById("clear"); // Clear button
+var ctx = canvas.getContext("2d"); // Stuff on canvas
 
-clear.addEventListener("click", clearCanvas)
-canvas.addEventListener("click", draw);
+// Keep track of last x,y coordinates
+var previousX = -1;
+var previousY = -1;
 
+// Clear the canvas
 function clearCanvas(event){
-  // Clear the canvas
   event.preventDefault();
-  ctx.clearRect(a,b,c,d);
+  ctx.clearRect(0,0,600,600); // Clear rectangle that covers the canvas
+  previousX = -1; // Reset last x coordinate
+  previousY = -1; // Reset last y coordinate
 }
 
+// Draw dots
 function draw(event){
   // Draw dots
   event.preventDefault();
-  var x = event.clientX;
-  var y = event.clientY;
+
+  // If there was a previous dot, make a line connecting the new one to the old one
+  if (previousX != -1){
+    ctx.beginPath();
+    ctx.moveTo(event.offsetX, event.offsetY);
+    ctx.lineTo(previousX, previousY);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 5;
+    ctx.stroke();
+    ctx.closePath();
+  }
+
   ctx.beginPath();
-  ctx.arc(x, y, 10, Math.PI*2, true);
+  // Draw a dot where your mouse is
+  ctx.arc(event.offsetX, event.offsetY, 10, 0, Math.PI*2, true);
   ctx.fillStyle = "red"; // Set fill to red
   ctx.fill();
   ctx.closePath();
+
+  // Set last coordinates to where the circle you just drew is
+  previousX = event.offsetX;
+  previousY = event.offsetY;
 }
+
+
+// Add event listeners to button and canvas
+button.addEventListener("click", clearCanvas);
+canvas.addEventListener("click", draw);
