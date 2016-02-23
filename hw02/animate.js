@@ -6,14 +6,13 @@ HW02 -- Dot, Dot, Dot
 */
 
 var c = document.getElementById("canvas"); // Canvas
-var button = document.getElementById("toggle"); // Clear button
-var clear = document.getElementById("clear"); // Clear button
+var start = document.getElementById("start"); // Start button
+var stop = document.getElementById("stop"); // Stop button
 var ctx = canvas.getContext("2d"); // Stuff on canvas
-
+var requestID;
 function clearCanvas(event){
   event.preventDefault();
   ctx.closePath();
-  ctx.beginPath();
   ctx.clearRect(0, 0, c.width, c.height); // Clear rectangle that covers the canvas
 }
 
@@ -40,11 +39,15 @@ var drawDot = function() {
   ctx.arc(c.width/2, c.height/2, radius, 0, 2*Math.PI);
   ctx.stroke();
   ctx.fill();
-  window.requestAnimationFrame(drawDot);
+  requestID = window.requestAnimationFrame(drawDot);
 };
 
 //drawDot();
 //button.addEventListener("click", clearCanvas);
+var stopIt = function() {
+  window.cancelAnimationFrame(requestID);
+  clearCanvas();
+}
 
-button.addEventListener("click", drawDot);
-clear.addEventListener("click", clearCanvas);
+start.addEventListener("click", drawDot);
+stop.addEventListener("click", stopIt);
