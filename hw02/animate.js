@@ -1,7 +1,7 @@
 /*
 Yasmeen Roumie
 SoftDev2 pd 3
-HW02 -- Dot, Dot, Dot
+HW02 -- Animate
 2016-02-22
 */
 
@@ -10,6 +10,7 @@ var start = document.getElementById("start"); // Start button
 var stop = document.getElementById("stop"); // Stop button
 var ctx = canvas.getContext("2d"); // Stuff on canvas
 var requestID;
+var started = false;
 function clearCanvas(event){
   event.preventDefault();
   ctx.closePath();
@@ -49,5 +50,10 @@ var stopIt = function() {
   clearCanvas();
 }
 
-start.addEventListener("click", drawDot);
-stop.addEventListener("click", stopIt);
+//if (!started){
+  start.addEventListener("click", drawDot);
+  //started = true;
+//} else {
+  stop.addEventListener("click", stopIt);
+  //started = false;
+//}
