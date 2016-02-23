@@ -1,7 +1,7 @@
 /*
 Yasmeen Roumie
 SoftDev2 pd 3
-HW02b -- Dot, Dot, Dot
+HW01d -- Dot, Dot, Dot
 2016-02-12
 */
 var canvas = document.getElementById("playground"); // Canvas

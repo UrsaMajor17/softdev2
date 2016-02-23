@@ -30,3 +30,19 @@
   * .arc(a, b, c, d, e);
   * .font = "30px arial"
   * .fillText(txt, a, b)
+
+<hr>
+# [HW 1c: Dot, Dot, Dot](index.html)
+### Due F 2016-02-12, 8:00am, EST.
+  * Develop index.html as discussed in class.
+  * Upload to the homework server.
+
+# [HW 1d: Dot, Dot, Dot](dotconn.js)
+### Due F 2016-02-12, 8:00am, EST.
+  * Develop canvas.js as discussed in class.
+  * Upload to the homework server.
+
+# Methods
+  * e.offsetX
+  * e.offsetY
+  * e.preventDefault();
