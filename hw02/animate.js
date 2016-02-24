@@ -10,7 +10,14 @@ var start = document.getElementById("start"); // Start button
 var stop = document.getElementById("stop"); // Stop button
 var ctx = canvas.getContext("2d"); // Stuff on canvas
 var requestID;
-var started = false;
+
+// DVD LOGO
+var logo = new Image();
+logo.src = "logo_dvd.jpg";
+var dvd = document.getElementById("dvd"); // DVD button
+
+
+//var started = false;
 function clearCanvas(event){
   event.preventDefault();
   ctx.closePath();
@@ -22,7 +29,7 @@ var growing = true;
 ctx.fillStyle = "red";
 
 var drawDot = function() {
-  ctx.clearRect(0, 0, c.width, c.height);
+  //ctx.clearRect(0, 0, c.width, c.height);
 
   if (growing){
     radius = radius + 1;
@@ -50,10 +57,10 @@ var stopIt = function() {
   clearCanvas();
 }
 
-//if (!started){
-  start.addEventListener("click", drawDot);
-  //started = true;
-//} else {
-  stop.addEventListener("click", stopIt);
-  //started = false;
-//}
+var drawDVD = function() {
+  ctx.drawImage(logo, c.width/2, c.height/2, 100, 100);
+}
+
+start.addEventListener("click", drawDot);
+stop.addEventListener("click", stopIt);
+dvd.addEventListener("click", drawDVD);
