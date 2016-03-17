@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="chart">
+    <div style="width: 40px">a</div>
+    <div style="width: 80px">b</div>
+    <div style="width: 150px">c</div>
+    <div style="width: 160px">d</div>
+    <div style="width: 230px">e</div>
+    <div style="width: 420px">f</div>
+  </div>
+</body>
+</html>
