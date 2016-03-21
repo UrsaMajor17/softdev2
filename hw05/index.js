@@ -48,25 +48,28 @@ var create_graph = function(){
     //x.checked = false;
     p.innerHTML = "";
     if (donkey.checked){
-	console.log("donkey");
-	p.innerHTML = "Democratic Delegates: <br>  4,763 total Democratic delegates," +
-	    "4,050 pledged delegates & 794 are superdelegates";
-	d3stuff(dem);
+	     console.log("donkey");
+	      p.innerHTML = "Democratic Delegates: <br>  4,763 total Democratic delegates," +
+	       "4,050 pledged delegates & 794 are superdelegates";
+	        d3stuff(democrats);
     }else if (elephant.checked){
-	console.log("elephant");
-	p.innerHTML = "Republic Delegates: <br> 2,472 total Republican delegates, 1,719 being pledged delegates.";
-	d3stuff(rep);
+	     console.log("elephant");
+	      p.innerHTML = "Republic Delegates: <br> 2,472 total Republican delegates, 1,719 being pledged delegates.";
+	      d3stuff(republicans);
     }
 }
 
 var d3stuff = function(data){
-    d3.select(".chart")
+    d3.select("#p")
       .selectAll("div")
-        .data(states + )
+        .data(data)
       .enter().append("div")
    	.style("width", function(d) {return d*2 + "px"; })
-	.text(function(d) {return d;});
-
+	.text(function(d) {return d;})
+        .data(states)
+      .insert("span")
+      .style("color", "black")
+      .text(function(d){return " " + d;});
 }
 
 donkey.addEventListener('click',create_graph);
