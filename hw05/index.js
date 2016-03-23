@@ -61,7 +61,7 @@ var create_graph = function(){
 
 var d3stuff = function(data){
     d3.select("#p")
-      .selectAll("div")
+      .selectAll("div").
         .data(data)
       .enter().append("div")
    	.style("width", function(d) {return d*2 + "px"; })
