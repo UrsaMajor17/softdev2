@@ -6,6 +6,7 @@
 # Write a function that uses list comprehension to return
 # whether a password meets a minimum threshold:
 # it contains a mixture of upper- and lowercase letters, and at least one number.
+
 def checkPass(password):
     UC_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     LC_LETTERS = "abcdefghijklmnopqrstuvwxyz"
@@ -19,6 +20,11 @@ def checkPass(password):
 print checkPass("helloabc123HI@?*&")
 print checkPass("hello")
                 
+# Write a function that uses list comprehension to return
+# a password's strength rating. This function should return a
+# low integer for a weak password and a higher integer
+# for a stronger password. (Suggested scale: 1-10)
+
 def passStrength(password):
     strength = 0
     UC_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

@@ -1,7 +1,11 @@
-def h(x):
-    return lambda y: x + y
+# Yasmeen Roumie
+# SoftDev2 pd 3
+# HW 6 -- Closure
+# 2016-04-01
 
-print h(1)
-print h(2)
-print h(1)(3)
-print h(2)(5)
+def f(x):
+    def g(y):
+        return x + y
+    return g
+
+print f(1)(2)
