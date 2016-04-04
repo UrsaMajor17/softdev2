@@ -51,6 +51,8 @@ def passStrength(password):
         strength += 2
     if (len(stuff) >= 10):
         strength += 2
-    print "Password Strength (0-10): " + str(strength)
+    print "Password Strength (0-10) of " + "'" + password + "'" + ": " + str(strength)
 
 passStrength("abc123ABC")
+passStrength("a!1Basdfasdf")
+passStrength("1234123125")

@@ -13,6 +13,9 @@ def repeat(string):
         return string*num
     return times
 
+r1 = repeat('omg')
+print r1(3)
+
 #print r1(2) # -> hellohello
 #print r2(2) # -> goodbyegoodbye
-print repeat('omg')(5) # -> coolcoolcool
+#print repeat('omg')(5) # -> coolcoolcool
