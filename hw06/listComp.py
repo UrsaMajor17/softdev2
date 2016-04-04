@@ -11,15 +11,20 @@ def checkPass(password):
     UC_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     LC_LETTERS = "abcdefghijklmnopqrstuvwxyz"
     numbers = "1234567890"
-    stuff = [1 if x in UC_LETTERS else 2 if x in LC_LETTERS else 3 if x in numbers else 0 for x in password]
-    if (1 in stuff and 2 in stuff and 3 in stuff):
+    stuff = [1 if x in UC_LETTERS else
+             2 if x in LC_LETTERS else
+             3 if x in numbers else
+             0 for x in password]
+    if (1 in stuff and
+        2 in stuff and
+        3 in stuff):
         return True
     else:
         return False
 
 print checkPass("helloabc123HI@?*&")
 print checkPass("hello")
-                
+
 # Write a function that uses list comprehension to return
 # a password's strength rating. This function should return a
 # low integer for a weak password and a higher integer
@@ -31,7 +36,11 @@ def passStrength(password):
     LC_LETTERS = "abcdefghijklmnopqrstuvwxyz"
     numbers = "1234567890"
     symbols = "~!@#$%^&*()_+-[]{}|\/?><.,;:'"
-    stuff = [1 if x in UC_LETTERS else 2 if x in LC_LETTERS else 3 if x in numbers else 4 if x in symbols else 0 for x in password]
+    stuff = [1 if x in UC_LETTERS else
+             2 if x in LC_LETTERS else
+             3 if x in numbers else
+             4 if x in symbols else
+             0 for x in password]
     if (1 in stuff):
         strength += 2
     if (2 in stuff):
