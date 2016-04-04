@@ -16,6 +16,6 @@ def repeat(string):
 r1 = repeat('omg')
 print r1(3)
 
-#print r1(2) # -> hellohello
-#print r2(2) # -> goodbyegoodbye
-#print repeat('omg')(5) # -> coolcoolcool
+# decorator
+# @<decorator>
+# def show_index():
