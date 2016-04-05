@@ -1,0 +1,10 @@
+def makeAdder(n):
+    def inner(x):
+        return x + n
+    return inner
+
+add3 = makeAdder(3)
+add5 = makeAdder(5)
+
+print add3(10)
+print add5(10)
