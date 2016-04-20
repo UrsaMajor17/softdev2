@@ -14,6 +14,8 @@ var f1 = {
     console.log('better way: ' + this.x);
   }
 };
+// f1.f()
+
 
 // var count = 0;
 //
@@ -39,8 +41,35 @@ var makeIncrementer = function() {
 
 var makeAdder = function(n) {
   var x = n;
-  return function() {
+
+  var inner = function() {
     x += x;
     return x;
+  }
+  return inner(x);
+}
+
+var makeAdder2 = function(n) {
+  return function(x) {
+    return x + n;
+  }
+}
+
+var add3 = makeAdder2(3);
+// add3(10) --> 13
+
+var makeCounter = function() {
+  var i = 0;
+
+  var get = function() {
+    return i;
+  }
+
+  return {
+    x: "this is a str in dict",
+    set: function(x) {
+      i = x;
+    },
+    get: get,
   }
 }
